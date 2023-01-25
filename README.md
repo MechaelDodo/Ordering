@@ -25,4 +25,12 @@ PostgreSQL
 
 ## Preview
 
-
+<details>
+  <summary>Screenshots</summary>
+  - Стартовая страница
+  ![Main](https://github.com/MechaelDodo/Ordering/tree/main/mockups/main_page_dishes.png )
+</details>
+<details>
+  <summary>Videos</summary>
+  
+</details>
