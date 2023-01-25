@@ -1,24 +1,28 @@
-# README
+# Ordering
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Platform for ordering dishes. After creating an order, you can see its contents in json-format. 
 
-* Ruby version
+## Requirements
 
-* System dependencies
+Ruby - 3.0.2
 
-* Configuration
+Rails - 7.0.4
 
-* Database creation
+PostgreSQL
 
-* Database initialization
+## Running
 
-* How to run the test suite
+1. After installing the project itself manage your *username* and *password*  in `config/database.yml`;
+2. Enter the following commands:
+* `bundle install`
+* `rails db:create`
+* `rails db:migrate`
+* `rails db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
+3. To start the application itself run `rails s` in your project console.
 
-* Deployment instructions
+## Preview
 
-* ...
+
