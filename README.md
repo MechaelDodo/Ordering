@@ -50,11 +50,11 @@ PostgreSQL
   
   * Create order
   
-  ![create_order](https://github.com/MechaelDodo/Ordering/blob/main/mockups/create_order.mp4)
+  ![create_order](https://raw.githubusercontent.com/MechaelDodo/Ordering/main/mockups/create_order.mp4)
   
   * Search by ingredients 
   
-  ![search_by_ingredietns](https://github.com/MechaelDodo/Ordering/blob/main/mockups/search.mp4)
+  ![search_by_ingredietns](https://raw.githubusercontent.com/MechaelDodo/Ordering/main/mockups/search.mp4)
   
   
 </details>
