@@ -28,9 +28,34 @@ PostgreSQL
 <details>
   <summary>Screenshots</summary>
   
-  ![main_page_dishes](https://github.com/MechaelDodo/Ordering/tree/main/mockups/main_page_dishes.png)
+  * Main page with dishes
+  
+  ![main_page_dishes](https://github.com/MechaelDodo/Ordering/blob/main/mockups/main_page_dishes.png)
+  
+  * Search by ingredients
+  
+  ![main_page_ingredients](https://github.com/MechaelDodo/Ordering/blob/main/mockups/main_page_ingredients.png)
+  
+  * Page with orders
+  
+  ![order_page](https://github.com/MechaelDodo/Ordering/blob/main/mockups/order_page.png)
+  
+  * Order json-response
+  
+  ![Dishes_json](https://github.com/MechaelDodo/Ordering/blob/main/mockups/show_json_order.png)
+  
 </details>
 <details>
   <summary>Videos</summary>
   
+  * Create order
+  
+  ![create_order](https://github.com/MechaelDodo/Ordering/blob/main/mockups/create_order.mp4)
+  
+  * Search by ingredients 
+  
+  ![search_by_ingredietns](https://github.com/MechaelDodo/Ordering/blob/main/mockups/search.mp4)
+  
+  
 </details>
+
