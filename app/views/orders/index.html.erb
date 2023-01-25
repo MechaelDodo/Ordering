@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+<section class="about my-5" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2" style="margin-top: 20px;">
+        <img class="img-fluid" src="https://i.artfile.ru/3300x2248_871244_[www.ArtFile.ru].jpg">
+      </div>
+      <div class="col-lg-5 pt-lg-0 order-2 order-lg-1 content">
+        <br>
+        <h3>Заказы:</h3>
+        <ul>
+          <% @orders.each do |order| %>
+            <li>
+              <div class="form-check form-switch">
+                <a class="btn btn-dark" href=<%="/orders/#{order.id}.json"%>  target="_blank" class="cta-btn">
+                  Заказ #<%=order.id %>
+                </a>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

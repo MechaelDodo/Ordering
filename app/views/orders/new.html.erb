@@ -1,0 +1,55 @@
+
+<%= render "form", order: @order %>
+
+  <section class="about my-5" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img class="img-fluid" src="https://img3.goodfon.ru/wallpaper/nbig/1/b8/doski-eda-yagody.jpg">
+        </div>
+        <div class="col-lg-5 pt-lg-0 order-2 order-lg-1 content">
+          <h3>Ингредиенты</h3>
+          <p class="fst-italic">
+            Поиск блюд с нужными вам ингриденетами
+          </p>
+          <%= form_with url: "/", method: :get do |form| %>
+          <ul>
+            <% @ingredients.each do |ingredient| %>
+            <li>
+              <div class="form-check form-switch">
+                <%= form.check_box "#{ingredient.name}", class:"form-check-input"  %>
+                <%= ingredient.name %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+            <button type="submit" name="commit" value="Search" class="btn btn-dark" data-disable-with="Search"><i class="bi bi-search"></i></button>
+            <%= form.submit "Показать все", class:"btn btn-dark" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+    const counter = function () {
+        const btns = document.querySelectorAll('.counter__btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const direction = this.dataset.direction;
+                const inp = this.parentElement.querySelector('.counter__value');
+                const currentValue = +inp.value;
+                let newValue;
+                if (direction === 'plus') {
+                    newValue = currentValue + 1;
+                } else {
+                    newValue = currentValue - 1 > 0 ? currentValue - 1 : 0;
+                }
+                inp.value = newValue;
+            })
+        })
+
+    }
+
+    counter();
+</script>

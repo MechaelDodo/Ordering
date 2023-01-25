@@ -1,0 +1,149 @@
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-left: var(--bs-navbar-nav-link-padding-x);
+    color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-left: var(--bs-navbar-nav-link-padding-x);
+    color: hsl(0, 2%, 50%);
+}
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("https://puzzleit.ru/files/puzzles/200/199517/_original.jpg") fixed top center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero:before {
+    content: "";
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#hero .container{
+    position: relative;
+    padding-top: 75px;
+}
+
+#hero h1{
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: "Poppins", Sans-Serif;
+}
+
+
+#hero h2{
+    margin: 10px 0 0 0;
+    color: #fff;
+    font-size: 24px;
+
+}
+
+#hero .icon-box h3{
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 10px;
+    line-height: 26px;
+}
+
+#hero .icon-box h3 a{
+    color: #fff;
+}
+
+#hero .icon-box h3 a:hover{
+    color: #ffc451;
+}
+
+.icon-box{
+    padding: 30px 100px;
+    padding-right: 160px;
+    border: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+}
+.icon-box:hover{
+    border-color: #ffc451;
+}
+
+.about ul li{
+    list-style-type: none;
+}
+
+.cta {
+    background: linear-gradient(rgba(2,2,2,0.5), rgba(2,2,2,0.8)), url("https://puzzleit.ru/files/puzzles/200/199517/_original.jpg") fixed center center;
+    padding: 80px 0;
+    color: #fff;
+}
+.cta h3{
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.cta-btn{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.cta-btn:hover{
+    background: #ffc451;
+    background-color: #ffc451;
+    color: #151515;
+}
+
+.crt-btn{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 10px;
+    background-color: rgba(28,28,28,0)
+}
+
+.crt-btn:hover{
+    background: #ffc451;
+    background-color: #ffc451;
+    color: #151515;
+}
+
+
+.counter__value {
+    border: 2px solid #fff;
+    border-radius: 4px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    resize: none;
+    text-align:center;
+    background-color: rgba(28,28,28,0);
+    color: #fff;
+    pointer-events: none;
+}
+
+.counter__btn{
+    width: 40px;
+    height: 40px;
+}
+
+.h-title{
+    cursor: pointer;
+}

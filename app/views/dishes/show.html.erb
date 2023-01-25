@@ -1,0 +1,51 @@
+<section id="hero" class="d-flex align-items-center justify-content-center">
+
+
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-8">
+        <h1><%= @dish.name %></h1>
+        <h2>Заказывайте вкусную еду только у нас</h2>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-xl-2 col-md-4 d-flex align-items-stretch">
+          <div class="w-100 p-3">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="#ffc451" class="bi bi-bag-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg>
+              <h3><a href='/'  title=<%= @dish.get_string_ingredients %> ><%= @dish.name %></a></h3>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="about my-5" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <img class="img-fluid" src="https://img3.goodfon.ru/wallpaper/nbig/1/b8/doski-eda-yagody.jpg">
+      </div>
+      <div class="col-lg-5 pt-lg-0 order-2 order-lg-1 content">
+        <h3>Ингредиенты</h3>
+        <p class="fst-italic">
+          В данное блюдо входит:
+        </p>
+          <ul>
+            <% @dish.ingredients.each do |ingredient| %>
+              <li>
+                <div class="form-check form-switch">
+                  <%= ingredient.name %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+</section>

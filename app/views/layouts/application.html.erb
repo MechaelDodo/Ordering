@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OrderingDishes</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <%= stylesheet_link_tag "application", media: 'all' %>
+    <%= stylesheet_link_tag "main", media: 'all' %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+  </head>
+
+  <body>
+
+  <header id="header" class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000;">
+      <div class="container">
+        <a href="/" class="navbar-brand">Ordering</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent"
+                aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav mr-auto mb-3 mb-lg-0">
+            <li class="nav-item">
+              <a href="/orders" class="nav-link">Все заказы</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link">Сделать заказ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <%= yield %>
+
+  <section class="cta mb-5">
+    <div class="container text-center">
+      <h3>Обратная связь</h3>
+      <p>
+        Переходите для общения со мной в телеграмм
+      </p>
+      <a href="https://t.me/MechaelDodo" target="_blank" class="cta-btn">Telegram</a>
+    </div>
+  </section>
+
+
+
+
+
+  </body>
+</html>

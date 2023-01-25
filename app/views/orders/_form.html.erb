@@ -1,0 +1,111 @@
+<%= form_with url: "/create", method: :post do |form| %>
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <% if order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-8">
+        <h1>Ordering</h1>
+        <h2>Заказывайте вкусную еду только у нас</h2>
+        <div>
+          <%= form.submit class:"crt-btn", value:"Заказать" %>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="carousel slide" data-ride="carousel" id="blogCarousel">
+        <ol class="carousel-indicators">
+          <% unless @dishes.blank? %>
+            <li data-bs-target="#blogCarousel" data-bs-slide-to="0" class="active"></li>
+            <% if @dishes.count > 4 and @dishes.count/4.0 > @dishes.count/4 %>
+              <% (1..(@dishes.count/4)).each do |i| %>
+              <li data-bs-target="#blogCarousel" data-bs-slide-to=<%= i %>>></li>
+              <% end %>
+            <% elsif  @dishes.count > 4 and @dishes.count/4.0 > @dishes.count/4 %>
+              <% (1..(@dishes.count/4-1)).each do |i| %>
+                <li data-bs-target="#blogCarousel" data-bs-slide-to=<%= i %>>></li>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ol>
+        <div class="container carousel-inner">
+          <% unless @dishes.blank? %>
+          <div class="carousel-item active">
+            <div class="row">
+              <% @dishes[0...4].each do |dish| %>
+              <div class="col-md-3">
+                <div class="col-xl-2 col-md-4 d-flex align-items-stretch">
+                  <div class="w-100 p-3">
+                    <div class="icon-box">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="#ffc451" class="bi bi-bag-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                      </svg>
+                      <h3 class="h-title" data-tooltip=<%= dish.get_string_ingredients %> ><a href=<%= dish_path(dish) %>><%= dish.name %></a></h3>
+
+                      <div class="counter">
+                        <button class="counter__btn btn btn-dark" name="button" type="button" data-direction="plus"><i class="bi bi-caret-up-fill"></i></button>
+                        <%= form.text_area "dishes[#{ dish.id }]", class:"counter__value", value: "0", required: true, readonly:true%>
+                        <button class="counter__btn btn btn-dark" name="button" type="button" data-direction="minus"><i class="bi bi-caret-down-fill"></i></button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+              <% i = 5 %>
+              <% while i< @dishes.count %>
+          <div class="carousel-item">
+            <div class="row">
+              <% @dishes[i...i+4].each do |dish| %>
+                  <div class="col-md-3">
+                    <div class="col-xl-2 col-md-4 d-flex align-items-stretch">
+                      <div class="w-100 p-3">
+                        <div class="icon-box">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="#ffc451" class="bi bi-bag-check" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                          </svg>
+                          <h3 class="h-title" data-tooltip=<%= dish.get_string_ingredients %> ><a href=<%= dish_path(dish) %>><%= dish.name %></a></h3>
+                          <div class="counter">
+                            <button class="counter__btn btn btn-dark" name="button" type="button" data-direction="plus"><i class="bi bi-caret-up-fill"></i></button>
+                            <%= form.text_area "dishes[#{ dish.id }]", class:"counter__value", value: "0", required: true, readonly:true%>
+                            <button class="counter__btn btn btn-dark" name="button" type="button" data-direction="minus"><i class="bi bi-caret-down-fill"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% i+=4 %>
+            </div>
+          </div>
+            <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
+
+
+
+
+
+
+
+
+
+
